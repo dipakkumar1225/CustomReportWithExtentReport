@@ -2,6 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static org.junit.Assert.*
+import org.apache.commons.io.FilenameUtils as FilenameUtils
+import org.junit.Test as Test
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -16,6 +19,4 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.comment('Click on link to start practising.')
 
 WebUI.scrollToElement(findTestObject('linkStartPractising'), 0)
-
-WebUI.click(findTestObject('linkStartPractising'))
 

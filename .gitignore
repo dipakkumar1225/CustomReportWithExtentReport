@@ -2,6 +2,7 @@
 /bin/
 /Libs/
 /.settings/
+/.classpath/
+/.svn/
 /.classpath
 .svn/
-/Reports/

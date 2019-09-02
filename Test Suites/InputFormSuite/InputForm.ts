@@ -17,9 +17,18 @@
       <testCaseId>Test Cases/Start</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9db0b732-43a8-4227-86eb-e7588733f98b</guid>
+      <guid>62f1984d-51ab-43b4-9804-e6c96db82c2c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/InputFormPage/TesrCaseInputForm</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>302d422c-1375-401d-9e2d-598f933a00d8</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/E/TestData</testDataId>
+      </testDataLink>
    </testCaseLink>
 </TestSuiteEntity>

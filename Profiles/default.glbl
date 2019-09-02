@@ -9,4 +9,9 @@
       <initValue>'https://www.seleniumeasy.com/test/'</initValue>
       <name>BASEURL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>SUITEID</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

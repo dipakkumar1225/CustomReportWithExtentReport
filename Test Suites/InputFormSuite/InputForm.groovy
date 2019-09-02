@@ -31,11 +31,8 @@ import com.kms.katalon.core.annotation.TearDownTestCase
 /**
  * Setup test suite environment.
  */
-@SetUp(skipped = false) // Please change skipped to be false to activate this method.
+@SetUp(skipped = true) // Please change skipped to be false to activate this method.
 def setUp() {
-	WebUI.openBrowser('')
-	WebUI.maximizeWindow()
-	WebUI.navigateToUrl(GlobalVariable.BASEURL)
 }
 
 /**
