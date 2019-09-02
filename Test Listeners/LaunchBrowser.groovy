@@ -1,5 +1,3 @@
-import org.openqa.selenium.WebDriver
-
 import com.aventstack.extentreports.MediaEntityBuilder
 import com.aventstack.extentreports.MediaEntityModelProvider
 import com.aventstack.extentreports.Status
@@ -10,9 +8,7 @@ import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
-import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.relevantcodes.extentreports.ExtentTest
 
 import internal.GlobalVariable as GlobalVariable
 import util.CustomReport
@@ -20,13 +16,14 @@ import util.CustomReport
 class LaunchBrowser {
 
 	static private boolean BROWSER_OPENED = false
-	CustomReport customReport = null
+	CustomReport customReport = CustomReport.instance
 
 	def openBrowser() {
 		BROWSER_OPENED = true
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.navigateToUrl(GlobalVariable.BASEURL)
+		customReport.initExtentReports("Extents/ExtentReport.html")
 	}
 
 	@BeforeTestCase
@@ -34,9 +31,6 @@ class LaunchBrowser {
 		if (!BROWSER_OPENED) {
 			openBrowser()
 		}
-		String URL = WebUI.getUrl()
-		customReport = new CustomReport()
-		customReport.systemInfo(URL)
 		customReport.startTestCase(testCaseContext.getTestCaseId())
 	}
 
@@ -44,35 +38,31 @@ class LaunchBrowser {
 	def getResultToExtentReport(TestCaseContext testCaseContext) {
 		switch (testCaseContext.getTestCaseStatus()){
 			case "PASSED" :
-				
-				customReport.testLogger.log(Status.PASS,MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t PASSED", ExtentColor.GREEN))
-//				MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromPath(customReport.captureScreen())
-//				MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromPath(customReport.captureScreen(), testCaseContext.getTestCaseId(), false).build()
-				customReport.testLogger.addScreenCaptureFromPath(customReport.captureScreen())
-				customReport.testLogger.assignAuthor("deepak")
-				customReport.testLogger.assignCategory("demo category")
-				customReport.testLogger.assignDevice("windows")
+				customReport.getExtentTest().log(Status.PASS,MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t PASSED", ExtentColor.GREEN))
+			//				MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromPath(customReport.captureScreen())
+				MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromPath(customReport.captureScreen(), testCaseContext.getTestCaseId(), false).build()
+				customReport.getExtentTest().addScreenCaptureFromPath(customReport.captureScreen())
+				customReport.getExtentTest().assignAuthor("Deepak ")
+				customReport.getExtentTest().assignCategory("Input Field")
+				customReport.getExtentTest().assignDevice("Test Assign Devices")
 				break
 			case "FAILED" :
-				customReport.testLogger.log(Status.FAIL, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t FAILED ", ExtentColor.RED))
-				customReport.testLogger.fail(testCaseContext.getMessage())
+				customReport.getExtentTest().log(Status.FAIL, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t FAILED ", ExtentColor.RED))
+				customReport.getExtentTest().fail(testCaseContext.getMessage())
 				break
 			case "ERROR" :
-				customReport.testLogger.log(Status.ERROR, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t ERROR ", ExtentColor.ORANGE))
-				customReport.testLogger.error(testCaseContext.getMessage())
+				customReport.getExtentTest().log(Status.ERROR, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t ERROR ", ExtentColor.ORANGE))
+				customReport.getExtentTest().error(testCaseContext.getMessage())
 				break
 			default :
-				customReport.testLogger.log(Status.SKIP, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t SKIP ", ExtentColor.CYAN))
-				customReport.testLogger.skip(testCaseContext.getMessage())
+				customReport.getExtentTest().log(Status.SKIP, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t SKIP ", ExtentColor.CYAN))
+				customReport.getExtentTest().skip(testCaseContext.getMessage())
 		}
-		customReport.endResult()
+		customReport.tearDownExtentReports()
 	}
 
 	@BeforeTestSuite
 	def openBrowser(TestSuiteContext testSuiteContext) {
 		openBrowser()
 	}
-
-	
-
 }

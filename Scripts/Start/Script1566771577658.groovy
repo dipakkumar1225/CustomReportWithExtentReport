@@ -16,7 +16,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.comment('Click on link to start practising.')
+WebUI.comment('Click on link to start practising..')
 
 WebUI.scrollToElement(findTestObject('linkStartPractising'), 0)
+
+WebUI.click(findTestObject('linkStartPractising'))
 

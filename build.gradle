@@ -6,17 +6,8 @@ plugins {
 repositories {
   mavenCentral()
 }
+
 dependencies {
-// https://mvnrepository.com/artifact/org.apache.poi/poi
-compile group: 'org.apache.poi', name: 'poi', version: '4.1.0'
-// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
-compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.0'
-
-// https://mvnrepository.com/artifact/com.relevantcodes/extentreports
-compile group: 'com.relevantcodes', name: 'extentreports', version: '2.40.2'
-
 // https://mvnrepository.com/artifact/com.aventstack/extentreports
 compile group: 'com.aventstack', name: 'extentreports', version: '4.0.9'
-
-
 }
