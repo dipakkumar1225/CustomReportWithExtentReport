@@ -2,7 +2,8 @@
 
 Used Extent Report : 4.0.9
 
-Pre-Requisites
+Pre-requisites:
+
 1. Download Gradle Build Tool from this link https://gradle.org/install/ and install.
 2. Set path variable.  Setting this avoid specifying the complete path to run/complie gradle.
 	```
@@ -10,7 +11,7 @@ Pre-Requisites
 	path = %GRADLE_HOME%\bin
 	```
  
-2. Now add build.gradle under the project root folder
+2. Now add <b>build.gradle</b> under the project root folder
 3. Add the dependencies 
 	```
 	plugins {
@@ -25,21 +26,23 @@ Pre-Requisites
 	compile group: 'com.aventstack', name: 'extentreports', version: '4.0.9'
 	}
 	```
-4. If Katalon is running then close and open the CMD
+4. If Katalon is running then close and open the cmd.
 5. Enter command <b>gradle katalonCopyDependencies</b> 
 6. All the defined dependencies in build.gradle will be download from defined remote repositories into Gradle's local repository.
-Default local repository location:  %UserProfile%/.gradle/caches/modules-2/files-2.1. You can also print the print the Gradle's local repository by adding the below line in build.gradle
+Default local repository location:  </b>%UserProfile%/.gradle/caches/modules-2/files-2.1</b>. You can also print the print the Gradle's local repository by adding the below line in <b>build.gradle</b>
 	```
 	task showMeCache << {
   		configurations.compile.each { println it }
 	}
 	```
 To change default local repository location add below task in build.gradle.
+	
 	```
 	task copyDepJars(type: Copy) {
   	from configurations.compile
  	 into 'C:\\Gradle\\Dependencies'
 	}
 	```
+	
 7. Once download completed start the Katalon Studio. Check this link https://github.com/katalon-studio/gradle-plugin for more details.
 
