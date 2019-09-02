@@ -31,13 +31,13 @@ Pre-requisites:
 6. Enter command <b>gradle katalonCopyDependencies</b> 
 7. All the defined dependencies in build.gradle will be download from defined remote repositories into Gradle's local repository.
 
- Default local repository location:  </b>%UserProfile%/.gradle/caches/modules-2/files-2.1</b>. You can also print the print the Gradle's local repository by adding the below line in <b>build.gradle</b>
+ Default local repository location:  </b>%UserProfile%/.gradle/caches/modules-2/files-2.1</b>. You can also print the print the Gradle's local repository by adding the below line in build.gradle
 	```
 	task showMeCache << {
   		configurations.compile.each { println it }
 	}
 	```
-To change default local repository location add below task in <b>build.gradle</b>
+To change default local repository location add below task in build.gradle
 	```
 	task copyDepJars(type: Copy) {
   	from configurations.compile
