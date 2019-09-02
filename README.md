@@ -29,18 +29,21 @@ Pre-requisites:
 	
 4. If Katalon is running then close and open the cmd.
 5. Enter command <b>gradle katalonCopyDependencies</b> 
+<ul> 
 6. All the defined dependencies in build.gradle will be download from defined remote repositories into Gradle's local repository.
-: Default local repository location:  </b>%UserProfile%/.gradle/caches/modules-2/files-2.1</b>. You can also print the print the Gradle's local repository by adding the below line in <b>build.gradle</b>
+<li>
+ Default local repository location:  </b>%UserProfile%/.gradle/caches/modules-2/files-2.1</b>. You can also print the print the Gradle's local repository by adding the below line in <b>build.gradle</b></li>
 	```
 	task showMeCache << {
   		configurations.compile.each { println it }
 	}
 	```
-: To change default local repository location add below task in <b>build.gradle</b>
+<li> To change default local repository location add below task in <b>build.gradle</b></li>
 	```
 	task copyDepJars(type: Copy) {
   	from configurations.compile
  	 into 'C:\\Gradle\\Dependencies'
 	}
 	```
+</ul> 
 7. Once download completed start the Katalon Studio. Check this link https://github.com/katalon-studio/gradle-plugin for more details.
