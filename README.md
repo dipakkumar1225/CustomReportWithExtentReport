@@ -11,8 +11,8 @@ Pre-requisites:
 	path = %GRADLE_HOME%\bin
 	```
  
-2. Now add <b>build.gradle</b> under the project root folder
-3. Add the dependencies 
+3. Now add <b>build.gradle</b> under the project root folder
+4. Add the dependencies 
 	```
 	plugins {
 	  id 'java'
@@ -27,10 +27,10 @@ Pre-requisites:
 	}
 	```
 	
-4. If Katalon is running then close and open the cmd.
-5. Enter command <b>gradle katalonCopyDependencies</b> 
+5. If Katalon is running then close and open the cmd.
+6. Enter command <b>gradle katalonCopyDependencies</b> 
 <ul> 
-6. All the defined dependencies in build.gradle will be download from defined remote repositories into Gradle's local repository.
+7. All the defined dependencies in build.gradle will be download from defined remote repositories into Gradle's local repository.
 <li>
  Default local repository location:  </b>%UserProfile%/.gradle/caches/modules-2/files-2.1</b>. You can also print the print the Gradle's local repository by adding the below line in <b>build.gradle</b></li>
 	```
@@ -46,4 +46,4 @@ Pre-requisites:
 	}
 	```
 </ul> 
-7. Once download completed start the Katalon Studio. Check this link https://github.com/katalon-studio/gradle-plugin for more details.
+8. Once download completed start the Katalon Studio. Check this link https://github.com/katalon-studio/gradle-plugin for more details.
