@@ -40,7 +40,7 @@ public class CustomReport {
 		extentHtmlReport = new ExtentHtmlReporter(FilenameUtils.separatorsToSystem(filePath))
 		//		extentHtmlReport.config().setDocumentTitle("Automation Report")
 		//		extentHtmlReport.config().setReportName("Functional Testing")
-				extentHtmlReport.config().setTheme(Theme.DARK)
+//				extentHtmlReport.config().setTheme(Theme.DARK)
 
 		extentReport.attachReporter(extentHtmlReport)
 		extentHtmlReport.loadXMLConfig("${currentDir}${fileSeperator}Extents${fileSeperator}extent-config.xml")

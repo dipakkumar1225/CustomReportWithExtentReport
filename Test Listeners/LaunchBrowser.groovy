@@ -42,9 +42,9 @@ class LaunchBrowser {
 			//				MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromPath(customReport.captureScreen())
 //				MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromPath(customReport.captureScreen(), testCaseContext.getTestCaseId(), false).build()
 				customReport.getExtentTest().addScreenCaptureFromPath(customReport.captureScreen())
-				customReport.getExtentTest().assignAuthor("Deepak ")
-				customReport.getExtentTest().assignCategory("Input Field")
-				customReport.getExtentTest().assignDevice("Test Assign Devices")
+//				customReport.getExtentTest().assignAuthor("Deepak ")
+//				customReport.getExtentTest().assignCategory("Input Field")
+//				customReport.getExtentTest().assignDevice("Test Assign Devices")
 				break
 			case "FAILED" :
 				customReport.getExtentTest().log(Status.FAIL, MarkupHelper.createLabel("${testCaseContext.getTestCaseId()} \t FAILED ", ExtentColor.RED))
