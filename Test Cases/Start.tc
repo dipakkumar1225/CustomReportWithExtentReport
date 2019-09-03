@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Start</name>
+   <tag></tag>
+   <comment>Click on link to start practising.</comment>
+   <testCaseGuid>00473e6e-2c6e-4547-8f8b-86f76de55bf7</testCaseGuid>
+</TestCaseEntity>
